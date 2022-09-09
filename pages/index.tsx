@@ -24,43 +24,43 @@ const Home: NextPage<HomeProps>  = ( {home} ) => {
 const query = gql`
   query {
     home {
-      siteLogo {
-        alt
-        url
-        width
-        height
-      }
-      backgroundPhoto {
-        url
-        width
-        height
-      }
-      title
-      tagline
-      skillsSummary {
-        skillText
-      }
-      description
-      section {
-        ... on GridSectionRecord {
+    siteLogo {
+      alt
+      url
+      width
+      height
+    }
+    backgroundPhoto {
+      url
+      width
+      height
+    }
+    title
+    tagline
+    skillsSummary {
+      skillText
+    }
+    description
+    section {
+      ... on GridSectionRecord {
+        title
+        items {
           title
-          items {
-            title
-          }
         }
-        ... on CardsSectionRecord {
-          title
-          cards {
-            cardTitle
-            cardDescription(markdown: false)
-          }
+      }
+      ... on CardsSectionRecord {
+        title
+        cards {
+          cardTitle
+          cardDescription(markdown: false)
         }
-        ... on TextSectionRecord {
-          title
-          description
-        }
+      }
+      ... on TextSectionRecord {
+        title
+        description
       }
     }
+  }
   }
 `
 
