@@ -3,6 +3,7 @@ import Head from 'next/head'
 import {GraphQLClient } from 'graphql-request';
 import homeQuery from './api/home-query';
 import Header from '../components/Header/Header';
+import Hero from '../components/Hero/Hero';
 
 interface HomeProps {
   home: {
@@ -13,6 +14,11 @@ interface HomeProps {
       height: Number
     }
     title: String
+    backgroundPhoto: Object
+    tagline: String
+    skillsSummary: []
+    clientsPreview: []
+    description: String
   }
 }
 
@@ -27,33 +33,16 @@ const Home: NextPage<HomeProps>  = ( {home} ) => {
       <Header 
         siteLogo={home.siteLogo}
       />
-      {/* <h1>{home.title}</h1> */}
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempor magna eu imperdiet viverra. Donec a ultricies tortor, ac laoreet lectus. Aenean dolor est, efficitur nec odio vel, molestie suscipit felis. In sagittis ac massa et iaculis. Vivamus aliquam nibh in turpis lobortis pulvinar. Mauris rhoncus arcu vitae efficitur placerat. Ut tristique a elit a tristique.
-
-Proin convallis feugiat dolor vitae tempus. Duis bibendum sed sem ut gravida. Nam leo nulla, eleifend vitae faucibus quis, pharetra eu elit. Quisque porta sem sed dignissim tempus. Nam eu metus enim. Vestibulum pellentesque nibh luctus, ultricies ligula nec, euismod sem. Praesent iaculis vehicula magna. Nam placerat metus et nulla vulputate semper. Donec vehicula lorem nunc. Morbi molestie non diam tristique laoreet. Etiam elementum et dolor quis fringilla. Quisque sit amet dolor nisi. Duis sed magna nec massa iaculis vestibulum. Nam facilisis metus nibh, a elementum risus pretium sit amet.
-
-Donec in est et nisi porttitor faucibus eget semper massa. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam et luctus nisl. Sed ac erat interdum, dapibus tortor quis, imperdiet dolor. Fusce egestas est eu lacus imperdiet, quis accumsan orci molestie. Integer et libero lorem. Donec pharetra scelerisque purus, at interdum ante elementum a. Praesent a magna justo. Ut ac pulvinar magna. Aenean sed tellus venenatis, ullamcorper felis vel, tristique nunc.
-
-Donec eget leo non enim commodo consequat. Nullam nibh massa, lobortis non orci id, interdum bibendum neque. Fusce non ligula viverra, imperdiet lorem non, elementum orci. Cras ornare urna diam, at hendrerit nibh imperdiet a. Sed bibendum porttitor est, in viverra purus. Pellentesque arcu mi, gravida vitae dui non, consequat rhoncus nulla. Nulla volutpat sed lacus in efficitur. Aliquam erat volutpat. Quisque non congue nulla. Nam ultrices turpis eget erat consequat tempor. Sed blandit malesuada elit, a fringilla massa gravida quis. Suspendisse lacinia, sapien at volutpat placerat, est ligula commodo ligula, at molestie enim erat id nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam sed efficitur neque. Morbi tempor velit in posuere facilisis. Vestibulum vel porttitor nibh.
-
-Ut a odio ipsum. Curabitur in dui quis odio fringilla condimentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer hendrerit odio urna, sit amet porttitor metus ullamcorper eu. Proin pharetra, lacus sit amet ornare auctor, leo eros interdum quam, at placerat erat ipsum vel elit. Phasellus non ligula consectetur, pharetra metus placerat, fermentum est. Nam ultricies tellus ipsum, non mollis mi scelerisque nec. Donec mattis vulputate est, ac tincidunt purus tempor venenatis. Nunc at egestas sem. Nulla at placerat ipsum. Sed eget tincidunt massa.
-
-Duis vel accumsan velit, sit amet dapibus nibh. In hac habitasse platea dictumst. Sed sed condimentum lectus. Duis nisl nibh, varius at porta ut, venenatis et magna. Nunc id accumsan tellus. Phasellus quam nisi, faucibus quis lacinia in, fermentum nec ligula. Praesent placerat tellus diam, in viverra purus ultricies non. Phasellus elementum urna vitae nunc semper porta. Praesent iaculis tortor sit amet nunc efficitur tincidunt. Donec gravida felis augue, eget pulvinar nisi sagittis in. Praesent a volutpat mauris, vel pulvinar neque. Nunc dapibus ut dui tristique convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et scelerisque libero. Nulla facilisi.
-      </p>
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempor magna eu imperdiet viverra. Donec a ultricies tortor, ac laoreet lectus. Aenean dolor est, efficitur nec odio vel, molestie suscipit felis. In sagittis ac massa et iaculis. Vivamus aliquam nibh in turpis lobortis pulvinar. Mauris rhoncus arcu vitae efficitur placerat. Ut tristique a elit a tristique.
-
-Proin convallis feugiat dolor vitae tempus. Duis bibendum sed sem ut gravida. Nam leo nulla, eleifend vitae faucibus quis, pharetra eu elit. Quisque porta sem sed dignissim tempus. Nam eu metus enim. Vestibulum pellentesque nibh luctus, ultricies ligula nec, euismod sem. Praesent iaculis vehicula magna. Nam placerat metus et nulla vulputate semper. Donec vehicula lorem nunc. Morbi molestie non diam tristique laoreet. Etiam elementum et dolor quis fringilla. Quisque sit amet dolor nisi. Duis sed magna nec massa iaculis vestibulum. Nam facilisis metus nibh, a elementum risus pretium sit amet.
-
-Donec in est et nisi porttitor faucibus eget semper massa. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam et luctus nisl. Sed ac erat interdum, dapibus tortor quis, imperdiet dolor. Fusce egestas est eu lacus imperdiet, quis accumsan orci molestie. Integer et libero lorem. Donec pharetra scelerisque purus, at interdum ante elementum a. Praesent a magna justo. Ut ac pulvinar magna. Aenean sed tellus venenatis, ullamcorper felis vel, tristique nunc.
-
-Donec eget leo non enim commodo consequat. Nullam nibh massa, lobortis non orci id, interdum bibendum neque. Fusce non ligula viverra, imperdiet lorem non, elementum orci. Cras ornare urna diam, at hendrerit nibh imperdiet a. Sed bibendum porttitor est, in viverra purus. Pellentesque arcu mi, gravida vitae dui non, consequat rhoncus nulla. Nulla volutpat sed lacus in efficitur. Aliquam erat volutpat. Quisque non congue nulla. Nam ultrices turpis eget erat consequat tempor. Sed blandit malesuada elit, a fringilla massa gravida quis. Suspendisse lacinia, sapien at volutpat placerat, est ligula commodo ligula, at molestie enim erat id nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam sed efficitur neque. Morbi tempor velit in posuere facilisis. Vestibulum vel porttitor nibh.
-
-Ut a odio ipsum. Curabitur in dui quis odio fringilla condimentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer hendrerit odio urna, sit amet porttitor metus ullamcorper eu. Proin pharetra, lacus sit amet ornare auctor, leo eros interdum quam, at placerat erat ipsum vel elit. Phasellus non ligula consectetur, pharetra metus placerat, fermentum est. Nam ultricies tellus ipsum, non mollis mi scelerisque nec. Donec mattis vulputate est, ac tincidunt purus tempor venenatis. Nunc at egestas sem. Nulla at placerat ipsum. Sed eget tincidunt massa.
-
-Duis vel accumsan velit, sit amet dapibus nibh. In hac habitasse platea dictumst. Sed sed condimentum lectus. Duis nisl nibh, varius at porta ut, venenatis et magna. Nunc id accumsan tellus. Phasellus quam nisi, faucibus quis lacinia in, fermentum nec ligula. Praesent placerat tellus diam, in viverra purus ultricies non. Phasellus elementum urna vitae nunc semper porta. Praesent iaculis tortor sit amet nunc efficitur tincidunt. Donec gravida felis augue, eget pulvinar nisi sagittis in. Praesent a volutpat mauris, vel pulvinar neque. Nunc dapibus ut dui tristique convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et scelerisque libero. Nulla facilisi.
-      </p>
+      <main>
+        <Hero 
+          backgroundPhoto={home.backgroundPhoto}
+          title={home.title}
+          tagline={home.tagline}
+          skillsSummary={home.skillsSummary}
+          description={home.description}
+          clients_preview={home.clientsPreview}
+        />
+      </main>
     </>
   )
 }

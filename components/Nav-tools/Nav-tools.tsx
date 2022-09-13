@@ -1,4 +1,4 @@
-import headerStyle from "./Header/Header.module.css"
+import headerStyle from "../Header/Header.module.css"
 
 type NavProps = {
   children: React.ReactNode;

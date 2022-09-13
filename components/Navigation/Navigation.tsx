@@ -1,10 +1,9 @@
 import Link from "next/link";
 import { useState } from "react";
-import Button from "./Button";
-import headerStyle from "./Header/Header.module.css"
-import Icon from "./Icon/Icon";
-import NavBar from "./Nav-bar";
-import NavTools from "./Nav-tools";
+import headerStyle from "../Header/Header.module.css"
+import Icon from "../Icon/Icon";
+import NavBar from "../Nav-bar/Nav-bar";
+import NavTools from "../Nav-tools/Nav-tools";
 
 const Navigation = () => {
 

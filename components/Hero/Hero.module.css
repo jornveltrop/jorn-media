@@ -1,0 +1,135 @@
+.hero {
+    position: relative;
+    height: calc(100vh - 83px);
+}
+
+.background_desktop_container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.background_desktop {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right bottom;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.content {
+    height: 100%;
+}
+
+.content_container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.introduction {
+    padding-top: 6.2em;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    gap: 1em;
+}
+
+.title_container {
+    background-color: var(--red);
+    position: relative;
+    padding: 10px 35px 10px 35px; 
+    width: max-content;
+    max-width: 100%;
+}
+
+.title_container h1::selection {
+    color: var(--red);
+    background: var(--white);
+}
+
+.description_container {
+    max-width: 450px;
+}
+
+.description_container p {
+    width: 100%;
+    font-size: 1.15em;
+    font-weight: 300;
+    line-height: 26px;
+    letter-spacing: 0px;
+    margin-top: 0;
+}
+
+.background_mobile_container {
+    display: none;
+}
+
+.hero_bottom {
+    padding: 20px 0 50px 0;
+}
+
+.scrol_down_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+@media (max-width: 767px) {
+    .hero {
+        height: 100%;
+    }
+
+    .background_desktop_container {
+        display: none;
+    }
+
+    .introduction {
+        padding-top: .5em;
+    }
+
+    .title_container {
+        white-space: nowrap;
+        font-size: 4.6vw;
+        display: flex;
+        justify-content: center;
+    }
+
+    .title_container h1 {
+        font-size: 2.5em;
+    }
+
+    .tagline_container {
+        white-space: nowrap;
+        font-size: 4.2vw;
+    }
+
+    .tagline_container h3 {
+        font-size: 1.95em;
+    }
+
+    .description_container {
+        width: 85vw;
+        max-width: none;
+    }
+
+    .background_mobile_container {
+        display: block;
+    }
+
+    .scrol_down_container {
+        display: none;
+    }
+}
+
+@media screen and (max-height: 755px) {
+    .hero {
+        height: auto;
+    }
+}

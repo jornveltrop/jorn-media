@@ -10,6 +10,7 @@ body {
 
 * {
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
@@ -55,6 +56,21 @@ h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   word-break: break-word;
 }
 
+h1 {
+  font-weight: bold;
+  font-size: 3.7em;
+}
+
+h2 {
+  
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 43px;
+  letter-spacing: .3px;
+}
+
 .screen-reader {
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
@@ -67,6 +83,27 @@ h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   margin: -1px;
   padding: 0;
   word-wrap: normal!important;
+}
+
+.boxed {
+  max-width: 1220px;
+  padding: 0 40px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+}
+
+.full_width {
+  padding: 0 40px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .boxed, .full_width { 
+    padding: 0 20px;
+  }
 }
 
 @media (prefers-color-scheme: white) {
