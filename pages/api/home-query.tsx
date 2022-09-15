@@ -67,6 +67,7 @@ const homeQuery = gql`
             ... on TextSectionRecord {
               _modelApiKey
               title
+              subtitle
               description
             }
           }

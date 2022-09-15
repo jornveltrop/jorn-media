@@ -1,8 +1,0 @@
-.Projecten :global(.grid) {
-    height: 750px;
-    grid-template-areas:
-    "item-1 item-2 item-3 item-3"
-    "item-4 item-2 item-5 item-6";
-    grid-template-columns: 1fr 2fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-}

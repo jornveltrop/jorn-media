@@ -1,23 +1,18 @@
 import Link from "next/link"
-import Button from "../Button/Button"
-import Grid_item from "../Grid_item/Grid_item"
-import Grid_section_style from "./Grid_section.module.css"
+import Grid from "../Grid/Grid"
 
 const Grid_section = ({...props}) => {
     const section = props.section
     const grid_items = section.items
+    const grid_name = section.title
 
   return (
-    <section className={`${section._modelApiKey} ${Grid_section_style[section.title]}`}>
-        <div className={`${Grid_section_style.title_container} boxed`}>
+    <section className={section._modelApiKey}>
+        <div className={`boxed`}>
             <h2>{section.title}</h2>
         </div>
 
-        <ul className="grid full_width">
-            {grid_items.map((item: {[key:string]:string}, i:number ) => {
-                return <Grid_item item={item} index={i} />
-            })}
-        </ul>
+        <Grid grid_items={grid_items} grid_name={grid_name} />
 
         <div className="button_wrapper">
             <Link href={section.allProjects._modelApiKey}>
