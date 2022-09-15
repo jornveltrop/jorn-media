@@ -4,7 +4,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    moz-transition: all ease .75s;
+    -moz-transition: all ease .75s;
     -webkit-transition: all ease .75s;
     transition: all ease .75s;
     position: relative;
@@ -32,7 +32,7 @@
     margin: 0;
     padding: 20px 20px;
     opacity: 1;
-    moz-transition: all ease .75s;
+    -moz-transition: all ease .75s;
     -webkit-transition: all ease .75s;
     transition: all ease .75s;
 }
@@ -51,7 +51,7 @@
 .overlay > div {
     opacity: 0;
     transform: translate(0, 20px);
-    moz-transition: all ease .75s;
+    -moz-transition: all ease .75s;
     -webkit-transition: all ease .75s;
     transition: all ease .75s;
 }
