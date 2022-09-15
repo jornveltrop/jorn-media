@@ -4,6 +4,8 @@ import {GraphQLClient } from 'graphql-request';
 import homeQuery from './api/home-query';
 import Header from '../components/Header/Header';
 import Hero from '../components/Hero/Hero';
+import Sections from '../components/Sections/Sections';
+import Home_style from '../styles/Home.module.css'
 
 interface HomeProps {
   home: {
@@ -19,10 +21,12 @@ interface HomeProps {
     skillsSummary: []
     clientsPreview: []
     description: String
+    sections: [String]
   }
 }
 
 const Home: NextPage<HomeProps>  = ( {home} ) => {
+
   return (
     <>
       <Head>
@@ -33,7 +37,7 @@ const Home: NextPage<HomeProps>  = ( {home} ) => {
       <Header 
         siteLogo={home.siteLogo}
       />
-      <main>
+      <main className={Home_style.home}>
         <Hero 
           backgroundPhoto={home.backgroundPhoto}
           title={home.title}
@@ -42,6 +46,7 @@ const Home: NextPage<HomeProps>  = ( {home} ) => {
           description={home.description}
           clients_preview={home.clientsPreview}
         />
+        <Sections sections={home.sections} />
       </main>
     </>
   )

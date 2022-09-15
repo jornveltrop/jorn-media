@@ -4,7 +4,7 @@ import Clients_preview_style from "./Clients_preview.module.css"
 
 const Clients_preview = ({...props}) => {
     const clients = props.clients_preview;
-    console.log(clients)
+    
   return (
     <ul className={Clients_preview_style.clients_preview}>
         {clients.map((client: {clientImage: {[key:string]:string}}) => (

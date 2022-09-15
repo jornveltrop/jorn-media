@@ -30,14 +30,34 @@ const homeQuery = gql`
               url
             }
           }
-          section {
+          sections {
             ... on GridSectionRecord {
+              _modelApiKey
               title
               items {
                 title
+                tag {
+                  tag
+                }
+                client
+                gridImage {
+                focalPoint {
+                  x
+                  y
+                }
+                alt
+                url
+                width
+                height
+              }
+              }
+              allProjects {
+                _modelApiKey
+                linkText
               }
             }
             ... on CardsSectionRecord {
+              _modelApiKey
               title
               cards {
                 cardTitle
@@ -45,6 +65,7 @@ const homeQuery = gql`
               }
             }
             ... on TextSectionRecord {
+              _modelApiKey
               title
               description
             }

@@ -1,6 +1,5 @@
 type ButtonProps = {
-    onClick(): void;
-    classes: string;
+    classes?: string;
     children: React.ReactNode;
 };
 
