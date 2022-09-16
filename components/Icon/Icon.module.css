@@ -1,8 +1,8 @@
-.scroll_down {
+.scrollDown {
     position: relative;
 }
 
-.scroll_down::after {
+.scrollDown::after {
     content: '';
     width: 6px;
     height: 6px;

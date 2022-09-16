@@ -1,19 +1,20 @@
 import PropTypes from 'prop-types';
-import icon_styles from './Icon.module.css'
+import iconStyles from './icon.module.css'
 import Hamburger from '../Icons/Hamburger';
-import Scroll_down from '../Icons/Scroll_down';
+import ScrollDown from '../Icons/ScrollDown';
 
 interface IconsObject {
     [key: string]: JSX.Element
 }
 
 const Icon = ({ icon = 'hamburger' }) => {
+	console.log
 	const icons: IconsObject = {
-		hamburger: <Hamburger/>,
-		scroll_down: <Scroll_down />
+		hamburger: <Hamburger />,
+		scrollDown: <ScrollDown />
 	};
 
-	return <span className={`${icon_styles[icon]} icon`}>{icons[icon]}</span>;
+	return <span className={`${iconStyles[icon]} icon`}>{icons[icon]}</span>;
 };
 
 Icon.propTypes = {

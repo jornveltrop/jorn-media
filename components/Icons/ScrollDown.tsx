@@ -1,4 +1,4 @@
-const Scroll_down = () => {
+const ScrollDown = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg"
 	 viewBox="0 0 79.4 122.9" height="50" width="50">
@@ -10,4 +10,4 @@ const Scroll_down = () => {
   )
 }
 
-export default Scroll_down
+export default ScrollDown

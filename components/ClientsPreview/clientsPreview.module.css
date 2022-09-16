@@ -1,4 +1,4 @@
-.clients_preview {
+.clientsPreview {
     margin-top: 2.5em;
     display: flex;
     flex-wrap: wrap;
@@ -7,34 +7,34 @@
     justify-content: space-between;
 }
 
-.clients_preview li {
+.clientsPreview li {
     height: 100%;
     width: 160px;
 }
 
-.clients_preview li:hover img {
+.clientsPreview li:hover img {
     transform: scale(1.05);
     opacity: .9;
 }
 
-.clients_preview li img {
+.clientsPreview li img {
     opacity: .6;
     transition: all .6s ease-in-out;
 }
 
 @media only screen and (max-width: 1024px){
-    .clients_preview li:nth-child(3) {
+    .clientsPreview li:nth-child(3) {
         display: none;
     }
 }
 
 @media only screen and (max-width: 767px) {
-    .clients_preview {
+    .clientsPreview {
         gap: 0;
         margin-top: 0;
     }
 
-    .clients_preview li {
+    .clientsPreview li {
         width: 50%;
         gap: 0;
         padding: 1em 1.5em;

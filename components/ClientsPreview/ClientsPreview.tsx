@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import Clients_preview_style from "./Clients_preview.module.css"
+import clientsPreviewStyle from "./clientsPreview.module.css"
 
-const Clients_preview = ({...props}) => {
-    const clients = props.clients_preview;
-    
+const ClientsPreview = ({...props}) => {
+    const clients = props.clientsPreview;
+
   return (
-    <ul className={Clients_preview_style.clients_preview}>
+    <ul className={clientsPreviewStyle.clientsPreview}>
         {clients.map((client: {clientImage: {[key:string]:string}}) => (
             <li>
                 <Link href={'/'}>
@@ -20,4 +20,4 @@ const Clients_preview = ({...props}) => {
   )
 }
 
-export default Clients_preview
+export default ClientsPreview

@@ -1,4 +1,4 @@
-.grid:global(.full_width), .grid:global(.boxed), .grid {
+.grid:global(.fullWidth), .grid:global(.boxed), .grid {
     display: grid;
     width: 100%;
     gap: 20px;
@@ -8,8 +8,8 @@
 .Projecten.grid {
     height: 750px;
     grid-template-areas:
-    "item-1 item-2 item-3 item-3"
-    "item-4 item-2 item-5 item-6";
+    "item1 item2 item3 item3"
+    "item4 item2 item5 item6";
     grid-template-columns: 1fr 2fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
 }
@@ -17,13 +17,13 @@
 @media screen and (max-width: 1220px) {
     .Projecten.grid {
         grid-template-areas:
-            "item-1 item-2"
-            "item-3 item-2";
+            "item1 item2"
+            "item3 item2";
         grid-template-columns: 1fr 2fr;
         grid-template-rows: 1fr 1fr;
     }
 
-    .grid :global(.grid_item_4), .grid :global(.grid_item_5), .grid :global(.grid_item_6) {
+    .grid :global(.gridItem4), .grid :global(.gridItem5), .grid :global(.gridItem6) {
         display: none;
     }
 }
@@ -35,7 +35,7 @@
         flex-direction: column;
     }
 
-    .grid_item .overlay_container {
+    .gridItem .overlayContainer {
         background: rgba(0,0,0,.4);
     }
 }

@@ -1,30 +1,37 @@
 import Link from "next/link";
 import { useState } from "react";
-import headerStyle from "../Header/Header.module.css"
+import navigationStyle from "./navigation.module.css"
 import Icon from "../Icon/Icon";
-import NavBar from "../Nav-bar/Nav-bar";
-import NavTools from "../Nav-tools/Nav-tools";
 
-const Navigation = () => {
-
+const Navigation = ({...props}) => {
+  const links = props.links
   const [toggleMenu, setToggleMenu] = useState(false);
-
+  console.log(links)
   return (
     <>
-      <nav className={headerStyle.navigation + ' ' + (toggleMenu ? `${headerStyle.openMenu}` : '')}>
-        <NavBar />
+      <nav className={`${navigationStyle.navigation} ${(toggleMenu ? navigationStyle.openMenu : '')}`}>
+        <ul className={navigationStyle.navBar}>
+        {links.map((link:{[key:string]:string}) => {
+          return (
+            <li>
+              <Link href={`/${link.slug}`}>
+                <a>{link.title}</a>
+              </Link>
+            </li>
+          )
+        })}
+    </ul>
 
-        <NavTools>
-          <button className={headerStyle.menuButton} onClick={() => setToggleMenu(!toggleMenu)}>
+        <ul className={navigationStyle.navTools}>
+          <button className={navigationStyle.menuButton} onClick={() => setToggleMenu(!toggleMenu)}>
             <Icon icon="hamburger" />
-            <span className="screen-reader">Hoofdmenu</span>
+            <span className="screenReader">Hoofdmenu</span>
           </button>
 
           <Link href="#contact">Contact</Link>
-        </NavTools>
-        
+        </ul>
       </nav>
-      <div className={headerStyle.contentOverlay + ' ' + (toggleMenu ? `${headerStyle.openMenu}` : '')} onClick={() => setToggleMenu(!toggleMenu)}></div>
+      <div className={`${navigationStyle.contentOverlay}  ${(toggleMenu ? navigationStyle.openMenu : '')}`} onClick={() => setToggleMenu(!toggleMenu)}></div>
     </>
   )
 }
