@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 import Icon from "../Icon/Icon"
 import cardStyle from "./card.module.css"
