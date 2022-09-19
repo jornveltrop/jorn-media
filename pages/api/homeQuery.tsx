@@ -13,12 +13,7 @@ query MyQuery {
         cards {
           title
           slug
-          icon {
-            url
-            width
-            height
-            alt
-          }
+          icon
           description
         }
       }

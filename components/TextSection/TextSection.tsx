@@ -1,10 +1,10 @@
-
+import slugify from "slugify"
 
 const TextSection = ({...props}) => {
   const section = props.section
   
   return (
-    <section className={`${section._modelApiKey} fullWidth`}>
+    <section id={slugify(section.title, { lower: true })} className={`${section._modelApiKey} fullWidth`}>
         <div className="boxed">
           <div className="titleContainer">
               <h2>{section.title}</h2>
