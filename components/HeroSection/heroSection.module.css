@@ -33,17 +33,17 @@
 }
 
 .introduction {
-    padding-top: 6.2em;
+    padding-top: 6.2rem;
     display: flex;
     flex-direction: column;
     width: auto;
-    gap: 1em;
+    gap: 1rem;
 }
 
 .titleContainer {
     background-color: var(--red);
     position: relative;
-    padding: 10px 35px 10px 35px; 
+    padding: .6rem 2.1rem; 
     width: max-content;
     max-width: 100%;
 }
@@ -59,10 +59,10 @@
 
 .descriptionContainer p {
     width: 100%;
-    font-size: 1.15em;
+    font-size: 1.15rem;
     font-weight: 300;
-    line-height: 26px;
-    letter-spacing: 0px;
+    line-height: 1.6rem;
+    letter-spacing: 0;
     margin-top: 0;
 }
 
@@ -71,7 +71,7 @@
 }
 
 .heroBottom {
-    padding: 20px 0 50px 0;
+    padding-top: 1.2rem;
 }
 
 .scrollDownContainer {
@@ -84,6 +84,7 @@
 @media (max-width: 767px) {
     .hero {
         height: 100%;
+        padding: 0 0 1rem 0;
     }
 
     .backgroundDesktopContainer {
@@ -91,7 +92,7 @@
     }
 
     .introduction {
-        padding-top: .5em;
+        padding-top: .5rem;
     }
 
     .titleContainer {
@@ -99,10 +100,11 @@
         font-size: 4.6vw;
         display: flex;
         justify-content: center;
+        width: 100%;
     }
 
     .titleContainer h1 {
-        font-size: 2.5em;
+        font-size: clamp(.5rem, 14vw - .3rem, 6.5rem);
     }
 
     .taglineContainer {
@@ -111,7 +113,7 @@
     }
 
     .taglineContainer h3 {
-        font-size: 1.95em;
+        font-size: clamp(.5rem, 10vw - .3rem, 6rem);
     }
 
     .descriptionContainer {

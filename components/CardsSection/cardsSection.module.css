@@ -1,9 +1,9 @@
 .cards {
     display: flex;
     flex-wrap: nowrap;
-    gap: 2.3em;
+    gap: 2.3rem;
     width: 100%;
-    margin: 1.5em 0;
+    margin: 1.5rem 0;
 }
 
 @media only screen and (max-width: 1024px){

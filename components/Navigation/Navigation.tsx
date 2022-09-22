@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/router";
 import navigationStyle from "./navigation.module.css"
 import Icon from "../Icon/Icon";
 
@@ -14,7 +15,7 @@ const Navigation = ({...props}) => {
             return (
               <li>
                 <Link href={`/${link.slug}`}>
-                  <a>{link.title}</a>
+                  <a className={navigationStyle[setCurrentNav(link.slug)]}>{link.title}</a>
                 </Link>
               </li>
             )
@@ -36,3 +37,14 @@ const Navigation = ({...props}) => {
 }
 
 export default Navigation
+
+function setCurrentNav(item:string) {
+  const router = useRouter();
+  const currentUrl = router.pathname
+  const menuItem = `/${item}`
+  
+  if (currentUrl == menuItem) {
+    return "menuActive"
+  }
+  return ''
+}

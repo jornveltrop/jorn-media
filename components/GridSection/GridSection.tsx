@@ -6,6 +6,7 @@ const GridSection = ({...props}) => {
     const section = props.section
     const gridItems = section.items
     const gridName = section.title
+    const links = section.links
 
   return (
     <section id={slugify(section.title, { lower: true })} className={section._modelApiKey}>
@@ -16,9 +17,14 @@ const GridSection = ({...props}) => {
         <Grid gridItems={gridItems} gridName={gridName} />
 
         <div className="buttonWrapper">
-            <Link href={'/'} >
-              <a className="button">Alle projecten</a>
-            </Link>
+          {links.map((link: any) => {
+            return (
+              <Link key={link.title} href={link.url != "" ? link.url : link.page.slug } >
+                <a className="button">{link.title}</a>
+              </Link>
+            )
+          })}
+            
         </div>
     </section>
   )

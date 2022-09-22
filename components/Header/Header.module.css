@@ -12,12 +12,13 @@
     justify-content: space-between;
     flex-shrink: 1;
     align-items: center;
+    gap: 1rem;
 }
 
 .siteLogoContainer {
     max-width: 200px;
     display: flex;
-    padding: 1.6em 0;
+    padding: 1.6rem 0;
 }
   
 .siteLogo {

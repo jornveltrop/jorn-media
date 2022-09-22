@@ -6,6 +6,7 @@ import Video from '../Icons/Video';
 import Website from '../Icons/Website';
 import Concept from '../Icons/Concept';
 import Design from '../Icons/Design';
+import ArrowUp from '../Icons/ArrowUp';
 
 interface IconsObject {
     [key: string]: JSX.Element
@@ -18,7 +19,8 @@ const Icon = ({ icon = 'hamburger' }) => {
 		website: <Website />,
 		concept: <Concept />,
 		design: <Design />,
-		scrollDown: <ScrollDown />
+		scrollDown: <ScrollDown />,
+		arrowUp: <ArrowUp />
 	};
 
 	return <span className={`${iconStyles[icon]} icon`}>{icons[icon]}</span>;

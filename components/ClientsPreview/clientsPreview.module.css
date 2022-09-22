@@ -1,9 +1,9 @@
 .clientsPreview {
-    margin-top: 2.5em;
+    margin-top: 2.5rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 1em;
+    gap: 1rem;
     justify-content: space-between;
 }
 
@@ -37,6 +37,6 @@
     .clientsPreview li {
         width: 50%;
         gap: 0;
-        padding: 1em 1.5em;
+        padding: 1rem 1.5rem;
     }
 }

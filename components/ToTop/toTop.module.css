@@ -1,0 +1,51 @@
+.toTop {
+    background-color: var(--red);
+    height: auto;
+    width: auto;
+    position: fixed;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    border-radius: 100%;
+    bottom: 6.3rem;
+    right: 2.5rem;
+    animation: fadeIn .5s;
+}
+
+.toTop.show {
+    pointer-events: all;
+    animation: fadeIn .5s;
+    opacity: 1;
+}
+
+.toTop.hidden {
+    pointer-events: none;
+    animation: fadeOut .5s;
+}
+
+.toTop :global(.icon) svg {
+    height: .9rem;
+    width: .9rem;
+    color: var(--white);
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+@keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }

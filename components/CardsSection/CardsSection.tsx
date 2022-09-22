@@ -5,7 +5,6 @@ import cardsSectionStyle from "./cardsSection.module.css"
 const CardsSection = ({...props}) => {
   const section = props.section
   
-  console.log(section)
   return (
     <section id={slugify(section.title, { lower: true })} className={`${section._modelApiKey} fullWidth`}>
         <div className="boxed">
