@@ -5,7 +5,6 @@ import slugify from "slugify"
 const GridSection = ({...props}) => {
     const section = props.section
     const gridItems = section.items
-    const gridName = section.title
     const links = section.links
 
   return (
@@ -14,7 +13,9 @@ const GridSection = ({...props}) => {
             <h2>{section.title}</h2>
         </div>
 
-        <Grid gridItems={gridItems} gridName={gridName} />
+        <div className="fullWidth">
+          <Grid gridItems={gridItems} />
+        </div>
 
         <div className="buttonWrapper">
           {links.map((link: any) => {

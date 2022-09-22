@@ -26,6 +26,7 @@ query MyQuery {
           slug
           skill {
             title
+            slug
           }
           headerImage {
             alt

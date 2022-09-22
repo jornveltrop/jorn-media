@@ -5,7 +5,7 @@
     margin: 1.25rem 0;
 }
 
-.Projecten.grid {
+.home.grid {
     height: 750px;
     grid-template-areas:
     "item1 item2 item3 item3"
@@ -14,8 +14,13 @@
     grid-template-rows: 1fr 1fr;
 }
 
+.large.grid {
+    grid-template-columns: repeat( auto-fill, minmax(400px, 1fr) );
+    gap: 2rem;
+}
+
 @media screen and (max-width: 1220px) {
-    .Projecten.grid {
+    .home.grid {
         grid-template-areas:
             "item1 item2"
             "item3 item2";
@@ -23,13 +28,13 @@
         grid-template-rows: 1fr 1fr;
     }
 
-    .grid :global(.gridItem4), .grid :global(.gridItem5), .grid :global(.gridItem6) {
+    .home.grid :global(.gridItem4), .home.grid :global(.gridItem5), .home.grid :global(.gridItem6) {
         display: none;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .Projecten.grid {
+    .home.grid {
         height: 600px;
         display: flex;
         flex-direction: column;

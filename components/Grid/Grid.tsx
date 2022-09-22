@@ -3,12 +3,23 @@ import gridStyle from "./grid.module.css"
 
 const Grid = ({...props}) => {
     const gridItems = props.gridItems;
-    const gridName = props.gridName;
+
+    const setGridSize = (items:any) => {
+      let itemCount = items.length
+
+      if (itemCount == 6) {
+        return 'home'
+      }
+      else if (itemCount > 6) {
+        return 'large'
+      }
+      else return ''
+    }
 
   return (
-    <ul className={`${gridStyle.grid} ${gridStyle[gridName]} fullWidth`}>
+    <ul className={`${gridStyle.grid} ${gridStyle[setGridSize(gridItems)]}`}>
         {gridItems.map((item: {[key:string]:string}, i:number ) => {
-            return <GridItem item={item} index={i} />
+            return <GridItem item={item} index={i} gridSize={setGridSize(gridItems)} />
         })}
     </ul>
   )
