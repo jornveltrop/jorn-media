@@ -40,7 +40,7 @@ const Projecten: NextPage<ProjectenProps>  = ( {projecten, header, footer} ) => 
         <div className={`boxed`}>
             <h2>{projectPage.title}</h2>
         </div>
-        <div className='fullWidth' >
+        <div className='fullWidth center' >
           <Grid gridItems={allProjects} />
         </div>
       </main>

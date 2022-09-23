@@ -28,7 +28,7 @@ const Navigation = ({...props}) => {
             <span className="screenReader">Hoofdmenu</span>
           </button>
 
-          <Link href="#contact">Contact</Link>
+          <Link href="/#contact">Contact</Link>
         </ul>
       </nav>
       <div className={`${navigationStyle.contentOverlay}  ${(toggleMenu ? navigationStyle.openMenu : '')}`} onClick={() => setToggleMenu(!toggleMenu)}></div>
