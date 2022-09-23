@@ -121,7 +121,7 @@ button {
   border: none;
   font-weight: 700;
   text-transform: uppercase;
-  font-size: .9em;
+  font-size: .9rem;
   padding: .9rem 1.7rem;
   line-height: 1.6rem;
   border-radius: 0;
@@ -130,6 +130,7 @@ button {
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
+  color: var(--white);
 }
 
 .button::selection, .tag::selection {
@@ -137,8 +138,12 @@ button {
   background: var(--white);
 }
 
-.button:hover {
+.button:hover, .button.active {
   background-color: var(--darkRed);
+}
+
+.button.active {
+  opacity: .7;
 }
 
 .screenReader {
@@ -173,6 +178,14 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.none {
+  display: none;
+}
+
+.relative {
+  position: relative;
 }
 
 section.fullWidth, section.boxed, section {

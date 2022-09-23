@@ -6,8 +6,8 @@ import cardStyle from "./card.module.css"
 const Card = ({...props}) => {
     const card = props.card
   return (
-    <li className={cardStyle.card}>
-        <Link href={`/${card.slug}`}>
+    <li key={card.id} className={cardStyle.card}>
+        <Link href={`/projecten/${card.slug}`}>
             <a>
                 <Icon icon={card.icon} />
 

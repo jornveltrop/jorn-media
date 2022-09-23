@@ -7,7 +7,6 @@ import heroSectionStyle from "./heroSection.module.css"
 
 const HeroSection = ({ ...props }) => {
     const section = props.section
-    console.log(section)
     const backgroundMobile = section.backgroundImages[1]
     const backgroundDesktop = section.backgroundImages[0]
 

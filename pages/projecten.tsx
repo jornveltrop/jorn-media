@@ -2,7 +2,6 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import {GraphQLClient } from 'graphql-request';
 import Header from '../components/Header/Header';
-import Sections from '../components/Sections/Sections';
 import homeStyle from '../styles/home.module.css'
 import projectenQuery from './api/projectenQuery';
 import headerQuery from './api/headerQuery';
@@ -10,11 +9,15 @@ import Footer from '../components/Footer/Footer';
 import footerQuery from './api/footerQuery';
 import ToTop from '../components/ToTop/ToTop';
 import Grid from '../components/Grid/Grid';
+import Filter from '../components/Filter/Filter';
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react';
 
 interface ProjectenProps {
   projecten: {
     projectPage: any;
     allProjects: any;
+    allSkills: any;
   }
   header: {
     links: [{[key:string]:String}]
@@ -28,6 +31,11 @@ interface ProjectenProps {
 const Projecten: NextPage<ProjectenProps>  = ( {projecten, header, footer} ) => {
   const projectPage = projecten.projectPage
   const allProjects = projecten.allProjects
+  const allSkills = projecten.allSkills
+  const router = useRouter()
+  let queries = router.query;
+  console.log(queries)
+  
   return (
     <>
       <Head>
@@ -41,6 +49,7 @@ const Projecten: NextPage<ProjectenProps>  = ( {projecten, header, footer} ) => 
             <h2>{projectPage.title}</h2>
         </div>
         <div className='fullWidth center' >
+          <Filter skills={allSkills}/>
           <Grid gridItems={allProjects} />
         </div>
       </main>

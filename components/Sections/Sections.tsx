@@ -12,16 +12,16 @@ const Sections = ({ ...props }) => {
         {sections.map((section: {[key:string]:string}) => {
 
             if (section._modelApiKey == 'grid_section') {
-                return <GridSection section={section} />
+                return <GridSection key={section.id} section={section} />
             } 
             else if (section._modelApiKey == 'text_section') {
-                return <TextSection section={section} />
+                return <TextSection key={section.id} section={section} />
             }
             else if (section._modelApiKey == 'hero_section') {
-                return <HeroSection section={section}/>
+                return <HeroSection key={section.id} section={section}/>
             }
             else if (section._modelApiKey == 'cards_section') {
-                return <CardsSection section={section} />
+                return <CardsSection key={section.id} section={section} />
             }
             else return
         })}

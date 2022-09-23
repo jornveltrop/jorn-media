@@ -1,0 +1,61 @@
+# Query: key={
+# ContextLines: 1
+
+13 results - 8 files
+
+components/CardsSection/CardsSection.tsx:
+   8    return (
+   9:     <section id={slugify(section.title, { lower: true })} className={`${section._modelApiKey} fullWidth`}>
+  10          <div className="boxed">
+
+  16              {section.cards.map((card: {[key:string]:any}) => (
+  17:               <Card key={card.id} card={card} />
+  18              ))}
+
+components/ClientsPreview/ClientsPreview.tsx:
+  10          {clients.map((client: any) => (
+  11:             <li>
+  12                  <Link href={`${client.slug}`}>
+
+components/GridSection/GridSection.tsx:
+  10    return (
+  11:     <section id={slugify(section.title, { lower: true })} className={section._modelApiKey}>
+  12          <div className={`boxed`}>
+
+  22              return (
+  23:               <Link key={link.title} href={link.url != "" ? link.url : link.page.slug } >
+  24                  <a className="button">{link.title}</a>
+
+components/HeroSection/HeroSection.tsx:
+  13    return (
+  14:     <section className={heroSectionStyle.hero} >
+  15        <div className={heroSectionStyle.backgroundDesktopContainer}>
+
+components/Navigation/Navigation.tsx:
+  15              return (
+  16:               <li>
+  17                  <Link href={`/${link.slug}`}>
+
+components/Sections/Sections.tsx:
+  14              if (section._modelApiKey == 'grid_section') {
+  15:                 return <GridSection key={section.id} section={section} />
+  16              } 
+  17              else if (section._modelApiKey == 'text_section') {
+  18:                 return <TextSection key={section.id} section={section} />
+  19              }
+  20              else if (section._modelApiKey == 'hero_section') {
+  21:                 return <HeroSection key={section.id} section={section}/>
+  22              }
+  23              else if (section._modelApiKey == 'cards_section') {
+  24:                 return <CardsSection key={section.id} section={section} />
+  25              }
+
+components/SkillsSummary/SkillsSummary.tsx:
+  8          {skillsSummary.map((skill: { [key:string]: any }) => (
+  9:             <li>
+  10                <Link href={`/projecten/${skill.slug}`}>
+
+components/TextSection/TextSection.tsx:
+  6    return (
+  7:     <section id={slugify(section.title, { lower: true })} className={`${section._modelApiKey} fullWidth`}>
+  8          <div className="boxed">
