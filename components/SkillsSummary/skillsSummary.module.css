@@ -11,9 +11,6 @@
     margin: 0 .5rem;
 }
 
-
-
-
 @media (max-width: 767px) {
     .skillsSummary {
         font-size: clamp(.5rem, 6.3vw - .2rem, 3rem);
