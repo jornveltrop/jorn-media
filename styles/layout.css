@@ -5,7 +5,7 @@ body {
   font-family: 'Work Sans';
   color-scheme: black;
   color: var(--white);
-  background-color: var(--background-color);
+  background-color: var(--backgroundColor);
 }
 
 * {
@@ -59,7 +59,7 @@ h2 {
   letter-spacing: .3px;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--light_grey);
+  color: var(--lightGrey);
 }
 
 h3 {
@@ -100,7 +100,7 @@ p {
   text-transform: uppercase;
 }
 
-.button_wrapper {
+.buttonWrapper {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -134,10 +134,10 @@ button {
 }
 
 .button:hover {
-  background-color: var(--dark_red);
+  background-color: var(--darkRed);
 }
 
-.screen-reader {
+.screenReader {
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
   overflow: hidden;
@@ -159,20 +159,20 @@ button {
   position: relative;
 }
 
-.full_width {
+.fullWidth {
   padding: 0 40px;
   margin: 0 auto;
   width: 100%;
   position: relative;
 }
 
-section.full_width, section.boxed, section {
+section.fullWidth, section.boxed, section {
   padding: 35px 0;
   position: relative;
 }
 
 @media screen and (max-width: 767px) {
-  .boxed, .full_width { 
+  .boxed, .fullWidth { 
     padding: 0 20px;
   }
 }
@@ -183,6 +183,6 @@ section.full_width, section.boxed, section {
   }
   body {
     color: var(--black);
-    background: var(--background-color)
+    background: var(--backgroundColor)
   }
 }

@@ -1,14 +1,14 @@
-import Grid_item from "../Grid_item/Grid_item";
-import Grid_style from "./Grid.module.css"
+import GridItem from "../GridItem/GridItem";
+import gridStyle from "./Grid.module.css"
 
 const Grid = ({...props}) => {
-    const grid_items = props.grid_items;
-    const grid_name = props.grid_name;
+    const gridItems = props.gridItems;
+    const gridName = props.gridName;
 
   return (
-    <ul className={`${Grid_style.grid} ${Grid_style[grid_name]} full_width`}>
-        {grid_items.map((item: {[key:string]:string}, i:number ) => {
-            return <Grid_item item={item} index={i} />
+    <ul className={`${gridStyle.grid} ${gridStyle[gridName]} fullWidth`}>
+        {gridItems.map((item: {[key:string]:string}, i:number ) => {
+            return <GridItem item={item} index={i} />
         })}
     </ul>
   )

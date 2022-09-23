@@ -1,0 +1,155 @@
+.navigation {
+    display: flex;
+}
+
+.navigation a {
+    padding: 10px 0;
+    position: relative;
+    transition: color .5s, border .5s;
+}
+
+.menuActive, .navigation a:hover {
+    color: var(--red);
+    transition: color .5s;
+}
+
+.navBar, .navTools {
+    padding: 0;
+    display: flex;
+    gap: 2.5em;
+    font-size: .96rem;
+    font-weight: 500;
+    align-items: center;
+}
+
+.navBar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    -webkit-transform: scale3d(0,1,1);
+    transform: scale3d(0,1,1);
+    -webkit-transform-origin: 0% 50%;
+    transform-origin: 0% 50%;
+    transition: transform 0.3s cubic-bezier(1,0.68,0.16,0.9);
+    background-color: var(--red);
+    bottom: -15px;
+    height: 3px;
+}
+
+.menuActive:hover::after, .navBar a:hover::after {
+    transform: scale3d(1,1,1);
+}
+
+.navTools {
+    margin-left: 2.2em;
+    gap: 1em;
+}
+
+.navTools :global(.icon) svg {
+    height: 18px;
+    width: 18px;
+}
+
+.navTools a {
+    border: 2px solid var(--white);
+    padding: .3em .5em .4em .5em;
+    transition: color .5s;
+}
+
+.navTools .menuActive,
+.navTools a:hover {
+    border: 2px solid var(--red);
+    transition: border .5s, color .5s;
+}
+
+.menuButton {
+    display: none;
+}
+
+.menuButton :global(.icon) svg {
+    transition: color .5s;
+}
+
+.menuButton:hover :global(.icon) svg {
+    color: var(--red);
+}
+
+
+.contentOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity .5s, transform .5s, width .1s .5s, height .1s .5s;
+}
+
+
+@media only screen and (max-width: 1024px){
+    .menuButton {
+        display: inline-block;
+    }
+
+    .openMenu .navBar {
+        display: inline-block;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        transition: background-color .5s;
+        padding: 25px 0;
+        background-color: var(--black);
+    }
+
+	/* all items */
+	.navBar li {
+		white-space: normal;
+        position: absolute;
+		display: block;
+		text-align: center;
+        opacity: 0;
+        pointer-events: none;
+        -webkit-transform: scale(1.1) translateY(-50%);
+			-ms-transform: scale(1.1) translateY(-50%);
+				transform: scale(1.1) translateY(-50%);
+	}
+	.navBar li a {
+		line-height: 40px;
+	}
+
+	.openMenu .navBar li{
+        position: relative;
+		opacity: 1;
+		pointer-events: auto;
+		-webkit-transform: none;
+			-ms-transform: none;
+				transform: none;
+        transition: opacity .5s ease-out, transform .55s ease-out;
+	}
+	.openMenu .navBar > li:nth-child(1){transition-delay:.15s;}
+	.openMenu .navBar > li:nth-child(2){transition-delay:.2s}
+	.openMenu .navBar > li:nth-child(3){transition-delay:.25s}
+	.openMenu .navBar > li:nth-child(4){transition-delay:.3s}
+	.openMenu .navBar > li:nth-child(5){transition-delay:.35s}
+	.openMenu .navBar > li:nth-child(6){transition-delay:.4s}
+	.openMenu .navBar > li:nth-child(7){transition-delay:.45s}
+	.openMenu .navBar > li:nth-child(8){transition-delay:.5s}
+	.openMenu .navBar > li:nth-child(9){transition-delay:.55s}
+	.openMenu .navBar > li:nth-child(10){transition-delay:.6s}
+	.openMenu .navBar > li:nth-child(11){transition-delay:.65s}
+
+	.navBar a:after {
+        bottom: 0;
+    }
+
+    .contentOverlay.openMenu   {
+        width: 100vw;
+        height: 100vh;
+        opacity: 1;
+        transition: opacity .5s, transform .5s;
+    }
+}
