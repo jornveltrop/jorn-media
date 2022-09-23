@@ -1,26 +1,26 @@
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/router";
 import navigationStyle from "./navigation.module.css"
 import Icon from "../Icon/Icon";
 
 const Navigation = ({...props}) => {
   const links = props.links
   const [toggleMenu, setToggleMenu] = useState(false);
-  console.log(links)
   return (
     <>
       <nav className={`${navigationStyle.navigation} ${(toggleMenu ? navigationStyle.openMenu : '')}`}>
         <ul className={navigationStyle.navBar}>
-        {links.map((link:{[key:string]:string}) => {
-          return (
-            <li>
-              <Link href={`/${link.slug}`}>
-                <a>{link.title}</a>
-              </Link>
-            </li>
-          )
-        })}
-    </ul>
+          {links.map((link:{[key:string]:string}) => {
+            return (
+              <li>
+                <Link href={`/${link.slug}`}>
+                  <a className={navigationStyle[setCurrentNav(link.slug)]}>{link.title}</a>
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
 
         <ul className={navigationStyle.navTools}>
           <button className={navigationStyle.menuButton} onClick={() => setToggleMenu(!toggleMenu)}>
@@ -37,3 +37,14 @@ const Navigation = ({...props}) => {
 }
 
 export default Navigation
+
+function setCurrentNav(item:string) {
+  const router = useRouter();
+  const currentUrl = router.pathname
+  const menuItem = `/${item}`
+  
+  if (currentUrl == menuItem) {
+    return "menuActive"
+  }
+  return ''
+}

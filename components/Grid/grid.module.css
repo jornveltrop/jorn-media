@@ -1,8 +1,8 @@
 .grid:global(.fullWidth), .grid:global(.boxed), .grid {
     display: grid;
     width: 100%;
-    gap: 20px;
-    margin: 20px 0;
+    gap: 1.25rem;
+    margin: 1.25rem 0;
 }
 
 .Projecten.grid {

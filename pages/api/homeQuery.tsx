@@ -13,12 +13,7 @@ query MyQuery {
         cards {
           title
           slug
-          icon {
-            url
-            width
-            height
-            alt
-          }
+          icon
           description
         }
       }
@@ -45,6 +40,28 @@ query MyQuery {
           slug
           title
         }
+        links {
+          title
+          url
+          page {
+            ... on SkillRecord {
+              id
+              slug
+            }
+            ... on ProjectRecord {
+              id
+              slug
+            }
+            ... on ProjectPageRecord {
+              id
+              slug
+            }
+            ... on HomeRecord {
+              id
+              slug
+            }
+          }
+        }
       }
       ... on HeroSectionRecord {
         id
@@ -65,6 +82,7 @@ query MyQuery {
           title
           slug
         }
+        description
         sections {
           clients {
             clientImage {

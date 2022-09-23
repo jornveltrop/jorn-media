@@ -6,4 +6,6 @@
     --red: #d83e42;
     --darkRed: #af292c;
     --backgroundColor: var(--black);
+    --redFilter: invert(31%) sepia(100%) saturate(1009%) hue-rotate(328deg) brightness(87%) contrast(93%);
+    --whiteFilter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(242deg) brightness(104%) contrast(103%);
 }

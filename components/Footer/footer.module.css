@@ -1,0 +1,9 @@
+.footer {
+    padding: 1rem 0;
+    background-color: var(--white);
+    color: var(--lightGrey);
+}
+
+.footer p {
+    font-size: .95rem;
+}

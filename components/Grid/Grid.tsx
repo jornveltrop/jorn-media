@@ -1,5 +1,5 @@
 import GridItem from "../GridItem/GridItem";
-import gridStyle from "./Grid.module.css"
+import gridStyle from "./grid.module.css"
 
 const Grid = ({...props}) => {
     const gridItems = props.gridItems;

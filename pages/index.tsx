@@ -6,6 +6,9 @@ import Sections from '../components/Sections/Sections';
 import homeStyle from '../styles/home.module.css'
 import homeQuery from './api/homeQuery';
 import headerQuery from './api/headerQuery';
+import Footer from '../components/Footer/Footer';
+import footerQuery from './api/footerQuery';
+import ToTop from '../components/ToTop/ToTop';
 
 interface HomeProps {
   home: {
@@ -24,12 +27,15 @@ interface HomeProps {
     sections: [String]
   }
   header: {
-    links: [{[key:string]:string}]
-    siteLogo: {[key:string]:string | number}
+    links: [{[key:string]:String}]
+    siteLogo: {[key:string]:String | Number}
+  }
+  footer: {
+    copyrightTag: String
   }
 }
 
-const Home: NextPage<HomeProps>  = ( {home, header} ) => {
+const Home: NextPage<HomeProps>  = ( {home, header, footer} ) => {
 
   return (
     <>
@@ -42,6 +48,8 @@ const Home: NextPage<HomeProps>  = ( {home, header} ) => {
       <main className={homeStyle.home}>
         <Sections sections={home.sections} />
       </main>
+      <Footer footerData={footer} />
+      <ToTop />
     </>
   )
 }
@@ -56,7 +64,8 @@ export async function getStaticProps () {
   })
   const homeData = await graphQLClient.request(homeQuery)
   const headerData = await graphQLClient.request(headerQuery)
-  const data = {home: homeData.home, header: headerData.header}
+  const footerData = await graphQLClient.request(footerQuery)
+  const data = {home: homeData.home, header: headerData.header, footer: footerData.footer}
 
   return {
     props: data
