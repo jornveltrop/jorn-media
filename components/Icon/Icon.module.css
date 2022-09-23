@@ -1,0 +1,24 @@
+.scroll_down {
+    position: relative;
+}
+
+.scroll_down::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    margin-left: -3px;
+    top: 12px;
+    border-radius: 3px;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-name: scroll;
+    position: absolute;
+    left: 50%;
+    transform: scale(0.8);
+}
+
+@keyframes scroll {
+    0% {opacity: 1;}
+    100% {opacity: 0; transform: translateY(26px);}
+}
