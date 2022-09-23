@@ -4,7 +4,6 @@ import clientsPreviewStyle from "./clientsPreview.module.css"
 
 const ClientsPreview = ({...props}) => {
     const clients = props.clientsPreview;
-    console.log(clients)
 
   return (
     <ul className={clientsPreviewStyle.clientsPreview}>

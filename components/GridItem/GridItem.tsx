@@ -4,23 +4,33 @@ import gridItemStyle from "./gridItem.module.css"
 
 const GridItem = ({...props}) => {
     const item = props.item
+    const gridSize = props.gridSize
     let i = props.index
     i++
-    const headerImage: any  = item.headerImage
-    const imagePositionX = headerImage.focalPoint.x * 100
-    const imagePositionY = headerImage.focalPoint.y * 100
+
+    let headerImageUrl  = '/fotos/placeholder.jpg'
+    let imagePositionX = 50
+    let imagePositionY = 50
+    let headerImageAlt = 'Placeholder JornMedia'
+
+    if (item.headerImage != null) {
+        let headerImage = item.headerImage
+        headerImageUrl = headerImage.url
+        imagePositionX = headerImage.focalPoint.x * 100
+        imagePositionY = headerImage.focalPoint.y * 100 
+        headerImageAlt = headerImage.alt
+    }
     const skill: any = item.skill
 
   return (
-    <li className={`gridItem${i} ${gridItemStyle.gridItem}`} 
-        style={{ 
-            gridArea: `item${i}`
-        }}
+    <li className={`gridItem${i} ${gridItemStyle.gridItem} ${skill.slug}`} 
+        style={  { gridArea: (gridSize == 'home' ? `item${i}` : 'unset') }
+        } 
     >
         <Link href={`/${item.slug}`}>
         
         <a>
-            <Image src={headerImage.url} layout="fill" objectFit="cover" objectPosition={`${imagePositionX}% ${imagePositionY}%`} alt={headerImage.alt} />
+            <Image src={headerImageUrl} layout="fill" objectFit="cover" objectPosition={`${imagePositionX || 50}% ${imagePositionY || 50}%`} alt={headerImageAlt} />
 
             <div className={gridItemStyle.overlayContainer}>
                 <div className={gridItemStyle.overlay}>

@@ -10,7 +10,7 @@ const Header = ({...props}) => {
   return (
     <>
       <header className={headerStyle.header}>
-          <div className={`${headerStyle.headerContainer} boxed`}>
+          <div className={`${headerStyle.container} boxed`}>
               <Link href="/">
                 <a className={headerStyle.siteLogoContainer}>
                   <Image className={headerStyle.siteLogo} src={headerData.siteLogo.url} alt={headerData.siteLogo.alt} width={headerData.siteLogo.width} height={headerData.siteLogo.height}/>
