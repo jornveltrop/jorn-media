@@ -23,6 +23,7 @@ query MyQuery {
         title
         items {
           id
+          slug
           skill {
             title
           }
@@ -85,6 +86,7 @@ query MyQuery {
         description
         sections {
           clients {
+            slug
             clientImage {
               alt
               height

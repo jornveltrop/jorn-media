@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import gridItemStyle from "./gridItem.module.css"
 
 const GridItem = ({...props}) => {
@@ -16,6 +17,8 @@ const GridItem = ({...props}) => {
             gridArea: `item${i}`
         }}
     >
+        <Link href={`/${item.slug}`}>
+        
         <a>
             <Image src={headerImage.url} layout="fill" objectFit="cover" objectPosition={`${imagePositionX}% ${imagePositionY}%`} alt={headerImage.alt} />
 
@@ -29,6 +32,7 @@ const GridItem = ({...props}) => {
                 </div>  
             </div>
         </a>
+        </Link>
     </li>
   )
 }
