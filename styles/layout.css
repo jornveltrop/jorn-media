@@ -138,11 +138,11 @@ button {
   background: var(--white);
 }
 
-.button:hover, .button.active {
+.button:hover, .button.disabled {
   background-color: var(--darkRed);
 }
 
-.button.active {
+.button.disabled {
   opacity: .7;
 }
 
