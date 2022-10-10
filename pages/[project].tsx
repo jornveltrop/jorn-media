@@ -9,6 +9,8 @@ import Footer from "../components/Footer/Footer";
 import ToTop from "../components/ToTop/ToTop";
 import Head from "next/head";
 import Header from "../components/Header/Header";
+import Sections from "../components/Sections/Sections";
+import projectStyle from "../styles/project.module.css";
 
 interface ProjectProps {
   project: any;
@@ -31,14 +33,17 @@ const Project: NextPage<ProjectProps> = ({ project, header, footer }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header headerData={header} />
-      <main>
+      <main className={projectStyle.project}>
         <HeaderSection
+          className={`fullWidth`}
           headerImage={project.headerImage}
           title={project.title}
           client={project.client}
           clientImage={project.clientImage}
           skill={project.skill}
         ></HeaderSection>
+
+        <Sections sections={project.sections} />
       </main>
       <Footer footerData={footer} />
       <ToTop />
