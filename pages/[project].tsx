@@ -24,7 +24,6 @@ interface ProjectProps {
 }
 
 const Project: NextPage<ProjectProps> = ({ project, header, footer }) => {
-  console.log(project);
   return (
     <>
       <Head>

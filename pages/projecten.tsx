@@ -34,7 +34,6 @@ const Projecten: NextPage<ProjectenProps> = ({ projecten, header, footer }) => {
   const allSkills = projecten.allSkills;
   const router = useRouter();
   let queries = router.query;
-  // console.log(queries)
 
   return (
     <>
