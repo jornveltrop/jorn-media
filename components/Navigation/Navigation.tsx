@@ -13,7 +13,7 @@ const Navigation = ({...props}) => {
         <ul className={navigationStyle.navBar}>
           {links.map((link:{[key:string]:string}) => {
             return (
-              <li>
+              <li key={link.slug}>
                 <Link href={`/${link.slug}`}>
                   <a className={navigationStyle[setCurrentNav(link.slug)]}>{link.title}</a>
                 </Link>

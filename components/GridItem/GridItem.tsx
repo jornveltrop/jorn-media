@@ -23,13 +23,13 @@ const GridItem = ({...props}) => {
     const skill: any = item.skill
 
   return (
-    <li className={`gridItem${i} ${gridItemStyle.gridItem} ${skill.slug}`} 
+    <li key={item.id} className={`gridItem${i} ${gridItemStyle.gridItem} ${skill.slug}`} 
         style={  { gridArea: (gridSize == 'home' ? `item${i}` : 'unset') }
         } 
     >
         <Link href={`/${item.slug}`}>
         
-        <a>
+        <a className="relative">
             <Image src={headerImageUrl} layout="fill" objectFit="cover" objectPosition={`${imagePositionX || 50}% ${imagePositionY || 50}%`} alt={headerImageAlt} />
 
             <div className={gridItemStyle.overlayContainer}>

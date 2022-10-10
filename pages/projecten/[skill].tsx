@@ -7,7 +7,7 @@ const Skill = ( ) => {
   return (
     <>
         <main>
-            <p>{skill}</p>
+            <p>Skill {skill}</p>
         </main>
     </>
   )

@@ -2,6 +2,10 @@ import { gql } from "graphql-request"
 
 const homeQuery = gql`
 query MyQuery {
+  allSkills {
+    title
+    slug
+  }
   projectPage {
     slug
     title

@@ -1,0 +1,23 @@
+.headerSection:global(.fullWidth) {
+    padding-top: 0;
+}
+
+.header {
+    height: 250px;
+    width: auto;
+    margin-bottom: 1em;
+}
+
+.overlayContainer {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 1.25rem;
+    opacity: 1;
+}
+
+.overlay {
+    display: flex;
+    height: 100%;
+    position: relative;
+}

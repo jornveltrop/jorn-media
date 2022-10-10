@@ -6,14 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "next build && next export",
     "lint": "next lint"
   },
   "dependencies": {
     "graphql-request": "^5.0.0",
     "next": "12.3.0",
+    "next-query-params": "^4.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "slugify": "^1.6.5"
+    "slugify": "^1.6.5",
+    "use-query-params": "^2.1.1"
   },
   "devDependencies": {
     "@types/node": "18.7.16",

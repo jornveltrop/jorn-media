@@ -1,0 +1,7 @@
+main.project section:nth-child(even){
+    background-color: var(--grey);
+}
+
+main.project section:nth-child(even) h2 {
+    text-align: right;
+}

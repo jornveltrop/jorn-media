@@ -4,7 +4,6 @@ import cardsSectionStyle from "./cardsSection.module.css"
 
 const CardsSection = ({...props}) => {
   const section = props.section
-  
   return (
     <section id={slugify(section.title, { lower: true })} className={`${section._modelApiKey} fullWidth`}>
         <div className="boxed">
@@ -14,7 +13,7 @@ const CardsSection = ({...props}) => {
 
           <ul className={cardsSectionStyle.cards}>
             {section.cards.map((card: {[key:string]:any}) => (
-              <Card card={card} />
+              <Card key={card.slug} card={card} />
             ))}
           </ul>
         </div>
