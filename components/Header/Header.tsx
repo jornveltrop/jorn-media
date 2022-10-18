@@ -6,7 +6,6 @@ import headerStyle from "./header.module.css";
 
 const Header = ({ ...props }) => {
   const headerData = props.headerData;
-  console.log(headerData.siteLogo.width);
 
   return (
     <>
