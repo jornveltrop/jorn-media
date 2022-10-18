@@ -27,8 +27,6 @@ const HeaderSection = ({ ...props }) => {
             objectFit="cover"
             objectPosition={`${imagePositionX || 50}% ${imagePositionY || 50}%`}
             src={props.headerImage.url}
-            height={props.headerImage.height}
-            width={props.headerImage.width}
             alt={props.headerImage.alt}
             className={headerSectionStyle.headerImage}
           ></Image>
