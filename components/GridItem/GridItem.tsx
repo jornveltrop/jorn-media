@@ -36,6 +36,7 @@ const GridItem = ({ ...props }) => {
             objectFit="cover"
             objectPosition={`${imagePositionX || 50}% ${imagePositionY || 50}%`}
             alt={headerImageAlt}
+            priority
           />
 
           <div className={gridItemStyle.overlayContainer}>
