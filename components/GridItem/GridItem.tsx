@@ -29,7 +29,7 @@ const GridItem = ({ ...props }) => {
       style={{ gridArea: gridSize == "home" ? `item${i}` : "unset" }}
     >
       <Link href={`/${item.slug}`}>
-        <a className={gridItemStyle.gridItemLink}>
+        <a className="relative">
           <Image
             src={headerImageUrl}
             layout="fill"

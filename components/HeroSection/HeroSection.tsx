@@ -19,8 +19,6 @@ const HeroSection = ({ ...props }) => {
           layout="fill"
           objectFit="cover"
           objectPosition="right bottom"
-          height={backgroundDesktop.height}
-          width={backgroundDesktop.width}
           alt={backgroundDesktop.alt}
         />
       </div>

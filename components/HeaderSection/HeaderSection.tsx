@@ -29,6 +29,7 @@ const HeaderSection = ({ ...props }) => {
             src={props.headerImage.url}
             alt={props.headerImage.alt}
             className={headerSectionStyle.headerImage}
+            priority
           ></Image>
           <div className={headerSectionStyle.overlayContainer}>
             <div className={headerSectionStyle.overlay}>

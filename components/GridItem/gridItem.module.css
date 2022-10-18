@@ -17,10 +17,6 @@
     transform: scale(1.01);
 }
 
-.gridItemLink {
-    position: relative;
-}
-
 .imageContainer {
     position: absolute;
     width: 100%;
