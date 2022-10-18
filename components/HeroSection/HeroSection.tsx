@@ -13,9 +13,12 @@ const HeroSection = ({ ...props }) => {
   return (
     <section className={heroSectionStyle.hero}>
       <div className={heroSectionStyle.backgroundDesktopContainer}>
-        <img
+        <Image
           className={heroSectionStyle.backgroundDesktop}
           src={backgroundDesktop.url}
+          layout="fill"
+          objectFit="cover"
+          objectPosition="right bottom"
           height={backgroundDesktop.height}
           width={backgroundDesktop.width}
           alt={backgroundDesktop.alt}
