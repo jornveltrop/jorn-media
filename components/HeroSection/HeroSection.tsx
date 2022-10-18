@@ -53,7 +53,7 @@ const HeroSection = ({ ...props }) => {
           <div className={heroSectionStyle.heroBottom}>
             <div className={heroSectionStyle.scrollDownContainer}>
               <Link href="#projecten">
-                <a>
+                <a aria-label="Scroll to content">
                   <Icon icon="scrollDown" />
                 </a>
               </Link>
