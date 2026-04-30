@@ -1,3 +1,4 @@
+import React from "react";
 import PropTypes from 'prop-types';
 import iconStyles from './icon.module.css'
 import Hamburger from '../Icons/Hamburger';
@@ -9,7 +10,7 @@ import Design from '../Icons/Design';
 import ArrowUp from '../Icons/ArrowUp';
 
 interface IconsObject {
-    [key: string]: JSX.Element
+    [key: string]: React.ReactElement
 }
 
 const Icon = ({ icon = 'hamburger' }) => {

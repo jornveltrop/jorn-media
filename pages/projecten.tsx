@@ -9,15 +9,12 @@ import Footer from "../components/Footer/Footer";
 import footerQuery from "./api/footerQuery";
 import ToTop from "../components/ToTop/ToTop";
 import Grid from "../components/Grid/Grid";
-import Filter from "../components/Filter/Filter";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 
 interface ProjectenProps {
   projecten: {
     projectPage: any;
     allProjects: any;
-    allSkills: any;
+
   };
   header: {
     links: [{ [key: string]: String }];
@@ -31,9 +28,7 @@ interface ProjectenProps {
 const Projecten: NextPage<ProjectenProps> = ({ projecten, header, footer }) => {
   const projectPage = projecten.projectPage;
   const allProjects = projecten.allProjects;
-  const allSkills = projecten.allSkills;
-  const router = useRouter();
-  let queries = router.query;
+
 
   return (
     <>
@@ -66,9 +61,10 @@ export async function getStaticProps() {
       authorization: "Bearer " + process.env.DATOCMS_API_KEY,
     },
   });
-  const projectenData = await graphQLClient.request(projectenQuery);
-  const headerData = await graphQLClient.request(headerQuery);
-  const footerData = await graphQLClient.request(footerQuery);
+  const projectenData: any
+   = await graphQLClient.request(projectenQuery);
+  const headerData: any = await graphQLClient.request(headerQuery);
+  const footerData: any = await graphQLClient.request(footerQuery);
   const data = {
     projecten: projectenData,
     header: headerData.header,

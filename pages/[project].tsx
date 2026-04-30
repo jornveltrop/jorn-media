@@ -60,10 +60,12 @@ export async function getStaticProps(context: any) {
   });
 
   const project = context.params.project;
-  const projectQuery: any = getProjectQuery(project);
-  const projectData = await graphQLClient.request(projectQuery);
-  const headerData = await graphQLClient.request(headerQuery);
-  const footerData = await graphQLClient.request(footerQuery);
+  const projectQuery = getProjectQuery(project);
+
+  const projectData: any = await graphQLClient.request(projectQuery);
+  const headerData: any = await graphQLClient.request(headerQuery);
+  const footerData: any = await graphQLClient.request(footerQuery);
+
   const data = {
     project: projectData.project,
     header: headerData.header,
@@ -83,8 +85,7 @@ export async function getStaticPaths() {
       authorization: "Bearer " + process.env.DATOCMS_API_KEY,
     },
   });
-  const projectenData = await graphQLClient.request(projectenQuery);
-
+  const projectenData: any = await graphQLClient.request(projectenQuery);
   let projects = projectenData.allProjects;
 
   const paths = projects.map((project: any) => {

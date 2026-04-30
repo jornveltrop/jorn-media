@@ -62,9 +62,9 @@ export async function getStaticProps () {
       authorization: "Bearer " + process.env.DATOCMS_API_KEY,
     }
   })
-  const homeData = await graphQLClient.request(homeQuery)
-  const headerData = await graphQLClient.request(headerQuery)
-  const footerData = await graphQLClient.request(footerQuery)
+  const homeData: any = await graphQLClient.request(homeQuery)
+  const headerData: any = await graphQLClient.request(headerQuery)
+  const footerData: any = await graphQLClient.request(footerQuery)
   const data = {home: homeData.home, header: headerData.header, footer: footerData.footer}
 
   return {

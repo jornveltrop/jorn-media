@@ -1,24 +1,41 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import navigationStyle from "./navigation.module.css"
+import navigationStyle from "./navigation.module.css";
 import Icon from "../Icon/Icon";
 
-const Navigation = ({...props}) => {
-  const links = props.links
+const Navigation = ({ ...props }) => {
+  const links = props.links;
+  const router = useRouter();
   const [toggleMenu, setToggleMenu] = useState(false);
+
+  function setCurrentNav(item: string) {
+    const currentUrl = router.pathname;
+    const menuItem = `/${item}`;
+
+    if (currentUrl === menuItem) {
+      return "menuActive";
+    }
+
+    return "";
+  }
+
+  function closeMenu() {
+    setToggleMenu(false);
+  }
+
   return (
     <>
-      <nav className={`${navigationStyle.navigation} ${(toggleMenu ? navigationStyle.openMenu : '')}`}>
+      <nav className={`${navigationStyle.navigation} ${toggleMenu ? navigationStyle.openMenu : ""}`}>
         <ul className={navigationStyle.navBar}>
-          {links.map((link:{[key:string]:string}) => {
+          {links.map((link: { [key: string]: string }) => {
             return (
               <li key={link.slug}>
-                <Link href={`/${link.slug}`}>
-                  <a className={navigationStyle[setCurrentNav(link.slug)]}>{link.title}</a>
+                <Link href={`/${link.slug}`} className={navigationStyle[setCurrentNav(link.slug)]}>
+                  {link.title}
                 </Link>
               </li>
-            )
+            );
           })}
         </ul>
 
@@ -31,20 +48,18 @@ const Navigation = ({...props}) => {
           <Link href="/#contact">Contact</Link>
         </ul>
       </nav>
-      <div className={`${navigationStyle.contentOverlay}  ${(toggleMenu ? navigationStyle.openMenu : '')}`} onClick={() => setToggleMenu(!toggleMenu)}></div>
+
+      <div
+        className={`${navigationStyle.contentOverlay} ${toggleMenu ? navigationStyle.openMenu : ""}`}
+        onClick={closeMenu}
+        onKeyDown={(event) => {
+          if (event.key === "Enter" || event.key === " ") closeMenu();
+        }}
+        role="button"
+        tabIndex={0}
+      />
     </>
-  )
-}
+  );
+};
 
-export default Navigation
-
-function setCurrentNav(item:string) {
-  const router = useRouter();
-  const currentUrl = router.pathname
-  const menuItem = `/${item}`
-  
-  if (currentUrl == menuItem) {
-    return "menuActive"
-  }
-  return ''
-}
+export default Navigation;
