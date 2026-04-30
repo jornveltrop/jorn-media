@@ -21,14 +21,14 @@ const ToTop = () => {
 
   return (
     <Link href="#top">
-      <a
-        className={`${toTopStyle.toTop} ${
+          <a 
+            className={`${toTopStyle.toTop} ${
           showScroll ? `${toTopStyle.show}` : `${toTopStyle.hidden}`
         }`}
         aria-label="Navigate to top"
-      >
-        <Icon icon="arrowUp" />
-      </a>
+>
+            <Icon icon="arrowUp" />
+          </a>
     </Link>
   );
 };

@@ -11,7 +11,7 @@ const Header = ({ ...props }) => {
     <>
       <header className={headerStyle.header}>
         <div className={`${headerStyle.container} boxed`}>
-          <Link href="/">
+          <Link href="/" legacyBehavior>
             <a className={headerStyle.siteLogoContainer}>
               <Image
                 className={headerStyle.siteLogo}

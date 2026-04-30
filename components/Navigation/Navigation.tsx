@@ -10,14 +10,7 @@ const Navigation = ({ ...props }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   function setCurrentNav(item: string) {
-    const currentUrl = router.pathname;
-    const menuItem = `/${item}`;
-
-    if (currentUrl === menuItem) {
-      return "menuActive";
-    }
-
-    return "";
+    return router.pathname === `/${item}` ? "menuActive" : "";
   }
 
   function closeMenu() {
@@ -28,24 +21,29 @@ const Navigation = ({ ...props }) => {
     <>
       <nav className={`${navigationStyle.navigation} ${toggleMenu ? navigationStyle.openMenu : ""}`}>
         <ul className={navigationStyle.navBar}>
-          {links.map((link: { [key: string]: string }) => {
-            return (
-              <li key={link.slug}>
-                <Link href={`/${link.slug}`} className={navigationStyle[setCurrentNav(link.slug)]}>
+          {links.map((link: { [key: string]: string }) => (
+            <li key={link.slug}>
+              <Link href={`/${link.slug}`} legacyBehavior>
+                <a className={navigationStyle[setCurrentNav(link.slug)]}>
                   {link.title}
-                </Link>
-              </li>
-            );
-          })}
+                </a>
+              </Link>
+            </li>
+          ))}
         </ul>
 
         <ul className={navigationStyle.navTools}>
-          <button className={navigationStyle.menuButton} onClick={() => setToggleMenu(!toggleMenu)}>
+          <button
+            className={navigationStyle.menuButton}
+            onClick={() => setToggleMenu(!toggleMenu)}
+          >
             <Icon icon="hamburger" />
             <span className="screenReader">Hoofdmenu</span>
           </button>
 
-          <Link href="/#contact">Contact</Link>
+          <Link href="/#contact" legacyBehavior>
+            <a>Contact</a>
+          </Link>
         </ul>
       </nav>
 

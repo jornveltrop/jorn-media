@@ -28,7 +28,7 @@ const GridItem = ({ ...props }) => {
       className={`gridItem${i} ${gridItemStyle.gridItem} ${skill.slug}`}
       style={{ gridArea: gridSize == "home" ? `item${i}` : "unset" }}
     >
-      <Link href={`/${item.slug}`}>
+      <Link href={`/${item.slug}`} legacyBehavior>
         <a>
           <Image
             src={headerImageUrl}

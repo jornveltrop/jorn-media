@@ -3,17 +3,13 @@ import Image from "next/image";
 import headerSectionStyle from "./headerSection.module.css";
 
 const HeaderSection = ({ ...props }) => {
-  let headerImageUrl = "/fotos/placeholder.jpg";
   let imagePositionX = 50;
   let imagePositionY = 50;
-  let headerImageAlt = "Placeholder JornMedia";
 
   if (props.headerImage != null) {
     let headerImage = props.headerImage;
-    headerImageUrl = headerImage.url;
     imagePositionX = headerImage.focalPoint.x * 100;
     imagePositionY = headerImage.focalPoint.y * 100;
-    headerImageAlt = headerImage.alt;
   }
 
   return (

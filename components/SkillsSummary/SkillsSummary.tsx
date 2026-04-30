@@ -7,7 +7,7 @@ const SkillsSummary = ({...props}) => {
     <ul className={skillsSummaryStyle.skillsSummary}>
         {skillsSummary.map((skill: { [key:string]: any }) => (
             <li key={skill.slug}>
-              <Link href={`/projecten/${skill.slug}`}>
+              <Link href={`/projecten/${skill.slug}`} legacyBehavior>
                 <a>
                   {skill.title}
                 </a>

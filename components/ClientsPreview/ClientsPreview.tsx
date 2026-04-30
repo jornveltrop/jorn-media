@@ -9,7 +9,7 @@ const ClientsPreview = ({...props}) => {
     <ul className={clientsPreviewStyle.clientsPreview}>
         {clients.map((client: any) => (
             <li key={client.slug}>
-                <Link key={client.slug} href={`${client.slug}`}>
+                <Link key={client.slug} href={`${client.slug}`} legacyBehavior>
                     <a>
                         <Image src={client.clientImage.url} alt={client.clientImage.alt} width={client.clientImage.width} height={client.clientImage.height} layout="responsive"/>  
                     </a>

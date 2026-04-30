@@ -7,7 +7,7 @@ const Card = ({...props}) => {
     const card = props.card
   return (
     <li key={card.id} className={cardStyle.card}>
-        <Link href={`/projecten/${card.slug}`}>
+        <Link href={`/projecten/${card.slug}`} legacyBehavior>
             <a>
                 <Icon icon={card.icon} />
 

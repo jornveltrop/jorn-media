@@ -20,7 +20,7 @@ const GridSection = ({...props}) => {
         <div className="buttonWrapper">
           {links.map((link: any) => {
             return (
-              <Link key={link.title} href={link.url != "" ? link.url : link.page.slug } >
+              <Link key={link.title} href={link.url != "" ? link.url : link.page.slug } legacyBehavior >
                 <a className="button">{link.title}</a>
               </Link>
             )
