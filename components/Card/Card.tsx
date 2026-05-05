@@ -7,14 +7,12 @@ const Card = ({...props}) => {
     const card = props.card
   return (
     <li key={card.id} className={cardStyle.card}>
-        <Link href={`/projecten/${card.slug}`} legacyBehavior>
-            <a>
-                <Icon icon={card.icon} />
+        <Link href={`/projecten/${card.slug}`}>
+            <Icon icon={card.icon} />
 
-                <h4>{card.title}</h4>
+            <h4>{card.title}</h4>
 
-                <p>{card.description}</p>
-            </a>
+            <p>{card.description}</p>
         </Link>
     </li>
   )

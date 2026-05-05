@@ -1,6 +1,6 @@
 import { gql } from "graphql-request";
 
-const getProjectQuery = (project: any) => gql`
+const getProjectQuery = (project: string) => gql`
   query MyQuery {
     project(filter: { slug: { eq: "${project}" } }) {
       slug

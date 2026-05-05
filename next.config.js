@@ -2,9 +2,13 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["www.datocms-assets.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.datocms-assets.com",
+      },
+    ],
   },
-  swcMinify: true,
   i18n: {
     locales: ["nl"],
     defaultLocale: "nl",

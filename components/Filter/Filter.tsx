@@ -1,6 +1,7 @@
 import { useState } from "react";
 import filterStyle from "./filter.module.css";
 import { useRouter } from "next/router";
+import type { Skill } from "../../types";
 
 const Filter = ({ ...props }) => {
   const skills = props.skills;
@@ -8,8 +9,8 @@ const Filter = ({ ...props }) => {
 
   const [activeSkills, setActiveSkills] = useState<Record<string, boolean>>({});
 
-  function setQuery(item: any, value: boolean) {
-    let currentQueries: any = router.query.skills;
+  function setQuery(item: string, value: boolean) {
+    let currentQueries = router.query.skills as string | undefined;
     let newQueries = currentQueries ? [currentQueries] : [];
 
     if (value === true) {
@@ -43,7 +44,7 @@ const Filter = ({ ...props }) => {
 
   return (
     <div className={filterStyle.filter}>
-      {skills.map((skillItem: any) => {
+      {skills.map((skillItem: Skill) => {
         const skillSlug = skillItem.slug;
         const skill = activeSkills[skillSlug] ?? true;
 

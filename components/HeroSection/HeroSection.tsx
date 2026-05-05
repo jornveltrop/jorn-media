@@ -16,9 +16,8 @@ const HeroSection = ({ ...props }) => {
         <Image
           className={heroSectionStyle.backgroundDesktop}
           src={backgroundDesktop.url}
-          layout="fill"
-          objectFit="cover"
-          objectPosition="right bottom"
+          fill
+          style={{ objectFit: "cover", objectPosition: "right bottom" }}
           alt={backgroundDesktop.alt}
         />
       </div>
@@ -46,16 +45,15 @@ const HeroSection = ({ ...props }) => {
                 height={backgroundMobile.height}
                 width={backgroundMobile.width}
                 alt={backgroundMobile.alt}
+                style={{ width: "100%", height: "auto" }}
               />
             </div>
           </div>
 
           <div className={heroSectionStyle.heroBottom}>
             <div className={heroSectionStyle.scrollDownContainer}>
-              <Link href="#projecten" legacyBehavior>
-                <a aria-label="Scroll to content">
-                  <Icon icon="scrollDown" />
-                </a>
+              <Link href="#projecten" aria-label="Scroll to content">
+                <Icon icon="scrollDown" />
               </Link>
             </div>
 

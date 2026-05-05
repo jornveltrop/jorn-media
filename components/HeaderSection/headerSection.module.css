@@ -12,7 +12,7 @@
     position: relative;
     height: 100%;
     width: 100%;
-    padding: 1.25rem;
+    padding: 0;
     opacity: 1;
 }
 
@@ -21,3 +21,27 @@
     height: 100%;
     position: relative;
 }
+
+.tags {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    z-index: 2;
+}
+
+.tag {
+    background: #d83e42;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+

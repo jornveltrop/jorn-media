@@ -11,16 +11,14 @@ const Header = ({ ...props }) => {
     <>
       <header className={headerStyle.header}>
         <div className={`${headerStyle.container} boxed`}>
-          <Link href="/" legacyBehavior>
-            <a className={headerStyle.siteLogoContainer}>
-              <Image
-                className={headerStyle.siteLogo}
-                src={headerData.siteLogo.url}
-                alt={headerData.siteLogo.alt}
-                width={headerData.siteLogo.width}
-                height={headerData.siteLogo.height}
-              />
-            </a>
+          <Link href="/" className={headerStyle.siteLogoContainer}>
+            <Image
+              src={headerData.siteLogo.url}
+              alt={headerData.siteLogo.alt}
+              width={headerData.siteLogo.width}
+              height={headerData.siteLogo.height}
+              style={{ width: "100%", height: "auto" }}
+            />
           </Link>
 
           <Navigation links={headerData.links} />

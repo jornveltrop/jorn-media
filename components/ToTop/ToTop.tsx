@@ -9,26 +9,22 @@ const ToTop = () => {
 
   useEffect(() => {
     const checkScrollTop = () => {
-      if (!showScroll && window.pageYOffset > 200) {
-        setShowScroll(true);
-      } else if (showScroll && window.pageYOffset <= 200) {
-        setShowScroll(false);
-      }
+      setShowScroll(window.pageYOffset > 200);
     };
 
     window.addEventListener("scroll", checkScrollTop);
-  });
+    return () => window.removeEventListener("scroll", checkScrollTop);
+  }, []);
 
   return (
-    <Link href="#top">
-          <a 
-            className={`${toTopStyle.toTop} ${
-          showScroll ? `${toTopStyle.show}` : `${toTopStyle.hidden}`
-        }`}
-        aria-label="Navigate to top"
->
-            <Icon icon="arrowUp" />
-          </a>
+    <Link
+      href="#top"
+      className={`${toTopStyle.toTop} ${
+        showScroll ? `${toTopStyle.show}` : `${toTopStyle.hidden}`
+      }`}
+      aria-label="Navigate to top"
+    >
+      <Icon icon="arrowUp" />
     </Link>
   );
 };

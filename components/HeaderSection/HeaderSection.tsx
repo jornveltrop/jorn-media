@@ -19,17 +19,20 @@ const HeaderSection = ({ ...props }) => {
       <div className="boxed">
         <header className={`${headerSectionStyle.header} relative`}>
           <Image
-            layout="fill"
-            objectFit="cover"
-            objectPosition={`${imagePositionX || 50}% ${imagePositionY || 50}%`}
+            fill
+            style={{ objectFit: "cover", objectPosition: `${imagePositionX || 50}% ${imagePositionY || 50}%` }}
             src={props.headerImage.url}
             alt={props.headerImage.alt}
             className={headerSectionStyle.headerImage}
             priority
-          ></Image>
+          />
           <div className={headerSectionStyle.overlayContainer}>
             <div className={headerSectionStyle.overlay}>
-              <span className="tag">{props.skill.title}</span>
+              <div className={headerSectionStyle.tags}>
+                {props.skill.map((s: { title: string; slug: string }) => (
+                  <span key={s.slug} className={headerSectionStyle.tag}>{s.title}</span>
+                ))}
+              </div>
             </div>
           </div>
         </header>

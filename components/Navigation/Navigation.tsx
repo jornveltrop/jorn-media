@@ -23,10 +23,8 @@ const Navigation = ({ ...props }) => {
         <ul className={navigationStyle.navBar}>
           {links.map((link: { [key: string]: string }) => (
             <li key={link.slug}>
-              <Link href={`/${link.slug}`} legacyBehavior>
-                <a className={navigationStyle[setCurrentNav(link.slug)]}>
-                  {link.title}
-                </a>
+              <Link href={`/${link.slug}`} className={navigationStyle[setCurrentNav(link.slug)]}>
+                {link.title}
               </Link>
             </li>
           ))}
@@ -41,9 +39,7 @@ const Navigation = ({ ...props }) => {
             <span className="screenReader">Hoofdmenu</span>
           </button>
 
-          <Link href="/#contact" legacyBehavior>
-            <a>Contact</a>
-          </Link>
+          <Link href="/#contact">Contact</Link>
         </ul>
       </nav>
 

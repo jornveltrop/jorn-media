@@ -1,10 +1,11 @@
 import GridItem from "../GridItem/GridItem";
 import gridStyle from "./grid.module.css"
+import type { GridProject } from "../../types"
 
 const Grid = ({...props}) => {
-    const gridItems = props.gridItems;
+    const gridItems: GridProject[] = props.gridItems;
 
-    const setGridSize = (items:any) => {
+    const setGridSize = (items: GridProject[]) => {
       let itemCount = items.length
 
       if (itemCount == 6) {
@@ -18,7 +19,7 @@ const Grid = ({...props}) => {
 
   return (
     <ul className={`${gridStyle.grid} ${gridStyle[setGridSize(gridItems)]}`}>
-        {gridItems.map((item: {[key:string]:string}, i:number ) => {
+        {gridItems.map((item: GridProject, i: number) => {
             return <GridItem key={item.id} item={item} index={i} gridSize={setGridSize(gridItems)} />
         })}
     </ul>
