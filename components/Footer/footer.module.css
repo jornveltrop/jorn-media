@@ -5,6 +5,25 @@
     margin-top: auto;
 }
 
-.footer p {
+.footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem 2rem;
+}
+
+.footer p,
+.footer a {
     font-size: .95rem;
+}
+
+.footer a {
+    color: var(--lightGrey);
+    font-weight: 500;
+    transition: color .5s;
+}
+
+.footer a:hover {
+    color: var(--red);
 }

@@ -1,0 +1,79 @@
+.voorwaarden {
+  padding-bottom: 4rem;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 3rem 0 2.5rem;
+}
+
+.intro p {
+  max-width: 46rem;
+  color: var(--lightGrey);
+}
+
+.acties {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.acties a:not(:global(.button)) {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: .9rem;
+  padding: .9rem 1.7rem;
+  line-height: 1.6rem;
+  border: 2px solid var(--white);
+  transition: color .5s, border .5s;
+}
+
+.acties a:not(:global(.button)):hover {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.viewer {
+  width: 100%;
+  height: min(85vh, 1100px);
+  border: 1px solid var(--grey);
+  background-color: var(--grey);
+  display: block;
+}
+
+.fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 2.5rem;
+  background-color: var(--grey);
+}
+
+.fallback p {
+  color: var(--lightGrey);
+  max-width: 40rem;
+}
+
+.alleenMobiel {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .viewer {
+    display: none;
+  }
+
+  .alleenMobiel {
+    display: flex;
+  }
+}
+
+.intro h2 {
+  font-size: clamp(2.2rem, 8vw, 5rem);
+  line-height: 1.05;
+}
